@@ -1,0 +1,21 @@
+StudentID,Name,Hours_Gaming_per_Day,Addiction_Score,Anxiety_Level,Sleep_Hours_per_Night,Study_Hours_per_Day,Physical_Activity_hours_per_week,Social_Interaction_hours_per_day,Stress_Level,Academic_Performance_GPA,Mental_Health_Risk
+1,Alice,2,4,3,7,3,4,2,3,3.5,Low Risk
+2,Bob,6,8,7,5,1,1,0.5,8,2.1,High Risk
+3,Charlie,1,2,2,8,4,6,3,2,3.9,Low Risk
+4,Diana,5,7,6,6,2,2,1,6,2.6,Medium Risk
+5,Ethan,3,5,4,6,3,3,2,4,3.1,Medium Risk
+6,Fiona,7,9,8,4,1,0,0.5,9,1.5,High Risk
+7,George,1,3,2,7,4,5,3,3,3.7,Low Risk
+8,Hannah,4,6,5,6,2,2,1,5,2.7,Medium Risk
+9,Ian,3,5,4,6,3,3,2,4,3,Medium Risk
+10,Julia,2,3,3,7,3.5,4,2,3,3.4,Low Risk
+11,Kevin,8,10,9,3,0.5,0,0.2,10,1.2,High Risk
+12,Lisa,1,2,2,8,4,6,3,2,3.8,Low Risk
+13,Mark,6,8,7,5,1.5,1,1,7,2,High Risk
+14,Nina,3,4,4,7,3,3,2,4,3.3,Medium Risk
+15,Owen,4,6,5,6,2,2,1,5,2.7,Medium Risk
+16,Paula,3,5,5,6,2,3,2,5,2.8,Medium Risk
+17,Quinn,0.5,1,1,8,5,6,4,2,4,Low Risk
+18,Rachel,7,9,8,4,1,0,0.5,8,1.6,High Risk
+19,Steve,2,3,3,7,3,4,2,3,3.4,Low Risk
+20,Tina,5,7,6,5,1.5,1,1,6,2.4,Medium Risk

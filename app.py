@@ -1,28 +1,36 @@
 from flask import Flask, request, jsonify
-from flask_cors import CORS
+from trained_model import predict_mental_health_risk
 
 app = Flask(__name__)
-CORS(app)
 
-# ✅ Add this to respond to GET requests at "/"
-@app.route('/', methods=['GET'])
-def index():
-    return "✅ Flask backend is running!"
+@app.route('/')
+def home():
+    return "Flask API is running. Use POST /predict_risk to get prediction."
 
-@app.route('/api/chat', methods=['POST'])
-def chat():
-    data = request.get_json()
-    user_input = data.get('message', '').lower().strip()
+@app.route('/predict_risk', methods=['POST'])
+def predict_risk():
+    try:
+        data = request.get_json()
 
-    if user_input == "hi":
-        reply = "hello, Ronamae Salve :)"
-    else:
-        reply = "I don't understand."
+        inputs = {
+            "addiction_score": float(data.get("addiction_score", 0)),
+            "anxiety_level": float(data.get("anxiety_level", 0)),
+            "sleep_hours": float(data.get("sleep_hours", 0)),
+            "study_hours": float(data.get("study_hours", 0)),
+            "physical_activity": float(data.get("physical_activity", 0)),
+            "social_interaction": float(data.get("social_interaction", 0)),
+            "stress_level": float(data.get("stress_level", 0)),
+        }
+    except (TypeError, ValueError):
+        return jsonify({"error": "Invalid input. Please provide JSON with numeric values."}), 400
 
-    return jsonify({"reply": reply})
+    score, category, pass_fail = predict_mental_health_risk(inputs)
+
+    return jsonify({
+        "risk_score": score,
+        "risk_category": category,
+        "academic_prediction": pass_fail
+    })
 
 if __name__ == '__main__':
-    print("✅ Flask server is running at http://localhost:5000")
     app.run(debug=True)
-
-
